@@ -1,0 +1,128 @@
+:root {
+  --bg-light: #ffffff;
+  --bg-dark: #111222;
+  --btn-bg-light: #f3f3f3;
+  --btn-bg-dark: #222333;
+  --text-light: #000000;
+  --text-dark: #ffffff;
+  --accent: #ff1493; 
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--accent); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background 0.3s ease;
+}
+
+.calculator {
+  width: 300px;
+  border-radius: 20px;
+  padding: 20px;
+  background: var(--bg-light);
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+body.dark .calculator {
+  background: var(--bg-dark);
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+}
+
+.toggle-btn {
+  width: 50px;
+  height: 25px;
+  background: #ccc;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-btn::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: var(--accent);
+  transition: transform 0.3s ease;
+}
+
+body.dark .toggle-btn::after {
+  transform: translateX(25px);
+}
+
+.display {
+  margin: 20px 0;
+  font-size: 2.5rem;
+  text-align: right;
+  color: var(--text-light);
+  overflow-x: auto;
+}
+
+body.dark .display {
+  color: var(--text-dark);
+}
+
+.extra-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.del {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--btn-bg-light);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+body.dark button {
+  background: var(--btn-bg-dark);
+  color: var(--text-dark);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.operator, .equal {
+  background: var(--accent);
+  color: #fff;
+}
